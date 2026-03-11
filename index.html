@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB ALERTS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <style>
+        /* GOLD & BLACK LUXURY THEME */
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --black: #121212;
+            --dark-gray: #1E1E1E;
+            --light-gray: #2E2E2E;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--black);
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--black);
+            color: var(--gold);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--dark-gray);
+            padding: 1rem 0;
+        }
+        
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        nav a:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background-color: var(--dark-gray);
+            border: 1px solid var(--gold);
+            border-radius: 0;
+        }
+        
+        /* GOLD SQUARE BUTTONS */
+        button, .btn {
+            padding: 0.8rem 1.8rem;
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 0;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:hover, .btn:hover {
+            background-color: var(--dark-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* FORM ELEMENTS */
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background-color: var(--light-gray);
+            border: 1px solid #444;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 0;
+        }
+        
+        input:focus, textarea:focus {
+            outline: 1px solid var(--gold);
+            background-color: var(--dark-gray);
+        }
+        
+        /* JOB PORTALS GRID */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .portal-card {
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        
+        .portal-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .portal-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .portal-card a::before {
+            content: "◆";
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        /* JOB BUTTONS SECTION */
+        .job-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .job-buttons a button {
+            width: 100%;
+        }
+        
+        footer {
+            background-color: var(--black);
+            color: var(--gold);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid var(--gold);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* GOOGLE SEARCH SECTION */
+        .google-search {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--black);
+            border: 1px solid var(--gold);
+        }
+        
+        .google-search input[type="text"] {
+            padding: 0.8rem;
+            width: 60%;
+            max-width: 500px;
+            background-color: var(--light-gray);
+            border: 1px solid #444;
+            color: white;
+            margin-right: 1rem;
+        }
+        
+        .google-search button {
+            padding: 0.8rem 2rem;
+        }
+        
+        /* PREMIUM SECTION */
+        .premium-access {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .premium-content {
+            display: none;
+        }
+        
+        .password-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .password-error {
+            color: #ff6b6b;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .vip-badge {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 0.3rem 0.8rem;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            border: 1px solid var(--gold);
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--gold);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* TAB CONTENT */
+        .tab-content {
+            display: none;
+        }
+        
+        .active-tab {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LUXURY JOB PORTAL</h1>
+        <nav>
+            <a href="#" onclick="showTab('home')">Home</a>
+            <a href="#" onclick="showTab('jobs')">Jobs</a>
+            <a href="#" onclick="showTab('portals')">Portals</a>
+            <a href="#" onclick="showTab('premium')">Premium <span class="vip-badge">VIP</span></a>
+            <a href="https://www.freejobalert.com" target="_blank">Free Job Alert</a>
+        </nav>
+    </header>
+    <main>
+        <!-- HOME TAB -->
+        <div id="home" class="tab-content active-tab">
+            <section class="hero">
+                <h1>LUXURY JOB PORTAL</h1>
+                <p>Your exclusive gateway to elite career opportunities worldwide</p>
+                <div class="hero-buttons">
+                    <button onclick="showTab('jobs')">BROWSE LISTINGS</button>
+                    <button onclick="showTab('premium')">ACCESS PREMIUM</button>
+                </div>
+            </section>
+            
+            <section class="google-search">
+                <form action="https://www.google.com/search" method="GET" target="_blank">
+                    <input type="text" name="q" placeholder="Search Google...">
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+            
+            <section>
+                <h2>WHY CHOOSE OUR PORTAL?</h2>
+                <div class="portal-grid">
+                    <div class="portal-card">
+                        <h3>Exclusive Listings</h3>
+                        <p>Access positions not advertised on public job boards</p>
+                    </div>
+                    <div class="portal-card">
+                        <h3>Executive Focus</h3>
+                        <p>Curated for senior-level and high-salary positions</p>
+                    </div>
+                    <div class="portal-card">
+                        <h3>Global Reach</h3>
+                        <p>Opportunities across 40+ countries worldwide</p>
+                    </div>
+                    <div class="portal-card">
+                        <h3>Discreet Service</h3>
+                        <p>Confidential search for passive candidates</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- JOBS TAB -->
+        <div id="jobs" class="tab-content">
+            <section class="external-jobs">
+                <h2>PREMIUM JOB LISTINGS</h2>
+                <p>Exclusive access to top career opportunities:</p>
+                <div class="job-buttons">
+                    <a href="https://www.freejobalert.com/government-jobs/" target="_blank"><button>GOVERNMENT CAREERS</button></a>
+                    <a href="https://www.freejobalert.com/it-jobs/" target="_blank"><button>TECHNOLOGY ROLES</button></a>
+                    <a href="https://www.freejobalert.com/bank-jobs/" target="_blank"><button>FINANCE POSITIONS</button></a>
+                    <a href="https://www.freejobalert.com" target="_blank"><button>ALL PREMIUM LISTINGS</button></a>
+                </div>
+            </section>
+        </div>
+        
+        <!-- PORTALS TAB -->
+        <div id="portals" class="tab-content">
+            <section class="job-portals">
+                <h2>ELITE JOB PORTALS</h2>
+                <p>Curated selection of the finest career platforms:</p>
+                <div class="portal-grid">
+                    <div class="portal-card">
+                        <a href="https://www.naukri.com/" target="_blank">Naukri.com</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.monsterindia.com/" target="_blank">Monster India</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.indeed.com/" target="_blank">Indeed</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.linkedin.com/jobs/" target="_blank">LinkedIn Jobs</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.timesjobs.com/" target="_blank">TimesJobs</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.freshersworld.com/" target="_blank">FreshersWorld</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.shine.com/" target="_blank">Shine.com</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.careerbuilder.com/" target="_blank">CareerBuilder</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.sarkariresult.com/" target="_blank">Sarkari Result</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.placementindia.com/" target="_blank">Placement India</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.careerage.com/" target="_blank">CareerAge</a>
+                    </div>
+                    <div class="portal-card">
+                        <a href="https://www.upwork.com/" target="_blank">Upwork (Freelance)</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- PREMIUM TAB -->
+        <div id="premium" class="tab-content">
+            <section class="premium-access">
+                <h2>PREMIUM MEMBERS AREA</h2>
+                <p>Access exclusive high-value job opportunities and executive search services</p>
+                
+                <div id="password-form" class="password-form">
+                    <input type="password" id="premium-password" placeholder="Enter Premium Access Code">
+                    <button onclick="checkPremiumAccess()">UNLOCK PREMIUM</button>
+                    <p id="password-error" class="password-error">Incorrect access code. Please try again.</p>
+                </div>
+                
+                <div id="premium-content" class="premium-content">
+                    <h3>EXCLUSIVE PREMIUM LISTINGS</h3>
+                    <div class="portal-grid">
+                        <div class="portal-card">
+                            <a href="#" target="_blank">C-Suite Executive Roles</a>
+                        </div>
+                        <div class="portal-card">
+                            <a href="#" target="_blank">International Assignments</a>
+                        </div>
+                        <div class="portal-card">
+                            <a href="#" target="_blank">Board Member Positions</a>
+                        </div>
+                        <div class="portal-card">
+                            <a href="#" target="_blank">$200K+ Salary Listings</a>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">EXECUTIVE SEARCH SERVICES</h3>
+                    <div class="job-buttons" style="margin-top: 1.5rem;">
+                        <a href="#" target="_blank"><button>HEADHUNTER ACCESS</button></a>
+                        <a href="#" target="_blank"><button>PERSONALIZED RECRUITER</button></a>
+                        <a href="#" target="_blank"><button>SALARY NEGOTIATION</button></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 LUXURY JOB PORTAL. All rights reserved. | Crafted by Gurpreet Singh</p>
+    </footer>
+    <script>
+        function checkPremiumAccess() {
+            const password = "456789";
+            const input = document.getElementById('premium-password').value;
+            const errorElement = document.getElementById('password-error');
+            const premiumContent = document.getElementById('premium-content');
+            const passwordForm = document.getElementById('password-form');
+            
+            if (input === password) {
+                premiumContent.style.display = 'block';
+                passwordForm.style.display = 'none';
+            } else {
+                errorElement.style.display = 'block';
+                setTimeout(() => {
+                    errorElement.style.display = 'none';
+                }, 3000);
+            }
+        }
+        
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active-tab');
+            
+            // Prevent default anchor behavior
+            return false;
+        }
+    </script>
+</body>
+</html>
